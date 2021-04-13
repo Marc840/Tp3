@@ -6,11 +6,11 @@
 library(jsonlite)
 questionnaire_service_clients <- fromJSON("data-raw/questionnaire_service_clients.json")
 str(questionnaire_service_clients)
-reponses_service_clients<-read.csv("data-raw/reponses_service_clients_2021_02.csv",sep=";")
+reponses_service_clients<-read.csv("data-raw/reponses_service_clients_2021_02.csv",sep=";",encoding="UTF-8")
 #questionnaire2 + reponse
 questionnaire_performances_responsables <- fromJSON("data-raw/questionnaire_performances_responsables.json")
 str(questionnaire_performances_responsables)
-reponses_performances_responsables<-read.csv("data-raw/reponses_performances_responsables_2020.csv",sep=";")
+reponses_performances_responsables<-read.csv("data-raw/reponses_performances_responsables_2020.csv",sep=";",encoding="UTF-8")
 
 #Étape 1 ecrire les fonctions
 
@@ -25,7 +25,7 @@ reponses_performances_responsables<-read.csv("data-raw/reponses_performances_res
 #' @examples
 #' lecture_fichier_JSON("data-raw/questionnaire_service_clients.json")
 lecture_fichier_JSON<-function(chemin){
-  fichier <- fromJSON("chemin")
+  fichier <- fromJSON("chemin",sep=';',encoding="UTF-8")
   liste<-list()
   i=1
   while (i <= length(row.names(questionnaire_service_clients))){    
