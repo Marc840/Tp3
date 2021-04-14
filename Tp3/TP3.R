@@ -25,21 +25,18 @@ reponses_performances_responsables<-read.csv("data-raw/reponses_performances_res
 #' @examples
 #' lecture_fichier_JSON("data-raw/questionnaire_service_clients.json")
 lecture_fichier_JSON<-function(chemin){
-  fichier <- fromJSON("chemin",sep=';',encoding="UTF-8")
+  fichier <- fromJSON(chemin)
   liste<-list()
   i=1
-  while (i <= length(row.names(questionnaire_service_clients))){    
-    liste[["id"]]<-questionnaire_service_clients$id[1]
-    liste[["question"]]<-questionnaire_service_clients$question[1]  
-    liste[["choix"]]<-questionnaire_service_clients$choix[1]
+  while (i <= length(row.names(fichier))){    
+    liste[["id"]]<-fichier$id[i]
+    liste[["question"]]<-fichier$question[i]  
+    liste[["choix"]]<-fichier$choix[i]
     print(liste)
     i= i+1
   }
-  if( reponse = NULL) { #tu veux faire quoi ici? parce que reponse est déja NULL pour que ton if 
-    reponse<-NULL 
-  }
   return(liste)
-}
+}                           #Ca marche sauf que la derniere question s'affiche 2 fois ?? 
 
 #' Méthode print pour la fonction utilitaire lecture_fichier_JSON
 #' 
@@ -70,12 +67,18 @@ lecture_fichier_JSON.print<-function(fichier,...){
 #' @author Stephanie Kelley
 #' @export
 #' @examples
-#' lecture_fichier_JSON.summary()
+#' lecture_fichier_JSON.summary(questionnaire_service_clients,impression=TRUE)
 lecture_fichier_JSON.summary<-function(object,...,impression=FALSE){
-  if (is.nullimpression & object$choix){
-    print(list(object$question , object$choix))
-  } else {
-    print(list(object$question))
+  if (impression){
+    liste<-list()
+    i=1
+    while (i <= length(row.names(object))){    #on ne veut pas imprimer le choix null de la derniere...
+      liste[["question"]]<-object$question[i]  
+      liste[["choix"]]<-object$choix[i]
+      i= i+1
+      print(liste)}
+} else {
+    print(list(object$question))         
   }
 }
 
