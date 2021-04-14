@@ -82,6 +82,19 @@ lecture_fichier_JSON.summary<-function(object,...,impression=FALSE){
   }
 }
 
+#fonction principale : generation de rapports R markdown 
+generateur_rapport_R_Markdown<-function(jeu_reponse,liste,variable= NULL,type ="barres verticales",nom,format="HTML",chemin="."){
+  
+}
+
+
+
+
+
+
+
+
+
 #étape 2
 #usethis::create_package(
 #  path = "C:/Users/Stephanie/Documents/R pour scientifique/Nomdupackage/", #lancer seulement si rendu la
