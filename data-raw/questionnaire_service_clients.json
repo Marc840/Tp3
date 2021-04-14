@@ -1,0 +1,62 @@
+[
+	{
+		"id": "Q01",
+		"question": "Dans l’ensemble, êtes-vous satisfait, insatisfait ou ni particulièrement satisfait ni particulièrement insatisfait de notre service clientèle ?",
+		"choix": ["Extrêmement satisfait", "Très satisfait", "Assez satisfait", "Ni satisfait, ni insatisfait", "Assez insatisfait", "Très insatisfait", "Extrêmement insatisfait"]
+	},
+	{
+		"id": "Q02",
+		"question": "Notre représentant du service clientèle a-t-il répondu à vos questions ou réglé votre problème ?",
+		"choix": ["Extrêmement bien", "Très bien", "Assez bien", "Pas très bien", "Pas du tout bien"]
+	},
+	{
+		"id": "Q03",
+		"question": "Considérez-vous que notre représentant du service clientèle a résolu votre problème rapidement, lentement, ou ni l’un ni l’autre ?",
+		"choix": ["Extrêmement rapidement", "Très rapidement", "Assez rapidement", "Ni rapidement, ni lentement", "Assez lentement", "Très lentement", "Extrêmement lentement"]
+	},
+	{
+		"id": "Q04",
+		"question": "Comment qualifieriez-vous la durée de votre attente en ligne avant de pouvoir communiquer avec notre représentant du service clientèle ?",
+		"choix": ["Extrêmement longue", "Très longue", "Assez longue", "Peu longue", "Pas du tout longue"]
+	},
+	{
+		"id": "Q05",
+		"question": "Considérez-vous que notre représentant du service clientèle a compris votre problème ?",
+		"choix": ["Extrêmement bien", "Très bien", "Assez bien", "Pas très bien", "Pas du tout bien"]
+	},
+	{
+		"id": "Q06",
+		"question": "Combien de vos questions ont-elles été résolues par notre représentant du service clientèle ?",
+		"choix": ["Toutes", "La plupart d'entre elles", "Environ la moitié", "Quelques-unes", "Aucune"]
+	},
+	{
+		"id": "Q07",
+		"question": "Notre représentant du service clientèle s’est-il montré poli ?",
+		"choix": ["Extrêmement poli", "Très poli", "Assez poli", "Peu poli", "Pas du tout poli"]
+	},
+	{
+		"id": "Q08",
+		"question": "Notre représentant du service clientèle vous a-t-il semblé compétent ?",
+		"choix": ["Extrêmement compétent", "Très compétent", "Assez compétent", "Peu compétent", "Pas du tout compétent"]
+	},
+	{
+		"id": "Q09",
+		"question": "Les informations fournies par notre représentant du service clientèle vous ont-elles semblé claires ?",
+		"choix": ["Extrêmement claires", "Très claires", "Assez claires", "Peu claires", "Pas du tout claires"]
+	},
+	{
+		"id": "Q10",
+		"question": "Comment qualifieriez-vous l’intervention de notre représentant du service clientèle ?",
+		"choix": ["Extrêmement utile", "Très utile", "Assez utile", "Peu utile", "Pas du tout utile"]
+	},
+	{
+		"id": "Q11",
+		"question": "Votre expérience avec le service clientèle de notre entreprise a-t-elle été supérieure, inférieure ou plus ou moins conforme à vos attentes ?",
+		"choix": ["Extrêmement supérieure", "Très supérieure", "Assez supérieure", "Ni supérieure, ni inférieure", "Assez inférieure", "Très inférieure", "Extrêmement inférieure"]
+	},
+	{
+		"id": "Q12",
+		"question": "Avez-vous d’autres commentaires, questions ou préoccupations ?",
+		"choix": null
+	}
+]

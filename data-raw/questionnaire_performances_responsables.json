@@ -1,0 +1,72 @@
+[
+	{
+		"id": "Q01",
+		"question": "Êtes-vous à l’aise pour faire part de vos inquiétudes à votre superviseur(euse) ?",
+		"choix": ["Extrêmement à l'aise", "Très à l'aise", "Relativement à l'aise", "Pas très à l'aise", "Pas du tout à l'aise"]
+	},
+	{
+		"id": "Q02",
+		"question": "Par rapport à aujourd’hui, comment souhaiteriez-vous interagir avec votre superviseur(euse) ?",
+		"choix": ["Beaucoup plus", "Plus", "Autant qu'aujourd’hui", "Moins", "Beaucoup moins"]
+	},
+	{
+		"id": "Q03",
+		"question": "La direction explique-t-elle clairement les objectifs commerciaux de l'entreprise ?",
+		"choix": ["Extrêmement clairement", "Très clairement", "Relativement clairement", "Pas très clairement", "Pas du tout clairement"]
+	},
+	{
+		"id": "Q04",
+		"question": "En général, votre superviseur(euse) vous explique-t-il/elle les changements de décisions ou d'objectifs ?",
+		"choix": ["Toujours", "La plupart du temps", "À peu près la moitié du temps", "De temps en temps", "Jamais"]
+	},
+	{
+		"id": "Q05",
+		"question": "Les attentes de votre superviseur(euse) sont-elles réalistes ?",
+		"choix": ["Extrêmement réalistes", "Très réalistes", "Relativement réalistes", "Pas très réalistes", "Pas du tout réalistes"]
+	},
+	{
+		"id": "Q06",
+		"question": "Comment votre employeur gère-t-il les problèmes politiques qui affectent l’entreprise ?",
+		"choix": ["Extrêmement bien", "Très bien", "Relativement bien", "Pas très bien", "Mal"]
+	},
+	{
+		"id": "Q07",
+		"question": "Quel soutien à l’entreprise la direction est-elle en mesure d’obtenir de la part de la communauté ?",
+		"choix": ["Un très grand soutien", "Un grand soutien", "Un soutien relatif", "Un léger soutien", "Aucun soutien"]
+	},
+	{
+		"id": "Q08",
+		"question": "Votre employeur est-il efficace dans les relations publiques ?",
+		"choix": ["Extrêmement efficace", "Très efficace", "Relativement efficace", "Pas très efficace", "Pas du tout efficace"]
+	},
+	{
+		"id": "Q09",
+		"question": "Votre employeur dépense-t-il suffisamment d'argent pour atteindre ses objectifs ?",
+		"choix": ["Beaucoup trop", "Trop", "Suffisamment", "Trop peu", "Beaucoup trop peu"]
+	},
+	{
+		"id": "Q10",
+		"question": "Avec quelle efficacité votre équipe collabore-t-elle ?",
+		"choix": ["Avec une immense efficacité", "Avec une grande efficacité", "Avec une certaine efficacité", "Avec peu d'efficacité", "Sans aucune efficacité"]
+	},
+	{
+		"id": "Q11",
+		"question": "Comment la direction gère-t-il/elle les problèmes des employés ?",
+		"choix": ["Extrêmement bien", "Très bien", "Relativement bien", "Pas très bien", "Mal"]
+	},
+	{
+		"id": "Q12",
+		"question": "Votre superviseur(euse) est-il/elle impliqué(e) dans la transformation de l’entreprise en un endroit plus positif pour travailler ?",
+		"choix": ["Extrêmement impliqué(e)", "Très impliqué(e)", "Assez impliqué(e)", "Pas très impliqué(e)", "Pas du tout impliqué(e)"]
+	},
+	{
+		"id": "Q13",
+		"question": "Les priorités de votre superviseur(euse) correspondent-elles aux objectifs de votre entreprise ?",
+		"choix": ["Extrêmement bien", "Très bien", "Relativement bien", "Pas très bien", "Mal"]
+	},
+	{
+		"id": "Q14",
+		"question": "Comment votre superviseur(euse) peut-il/elle améliorer ses performances ?",
+		"choix": null
+	}
+]
