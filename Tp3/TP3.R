@@ -86,7 +86,7 @@ lecture_fichier_JSON.summary<-function(object,...,impression=FALSE){
   if (impression){
     liste<-list()
     i=1
-    while (i <= length(row.names(object))){   #on ne veut pas imprimer le choix null de la derniere...
+    while (i <= length(row.names(object))){   
       nouveau_choix<-object$choix[!unlist(lapply(object$choix,is.null))]
       liste_tempo<-list()
       #liste_tempo[["id"]]<-object$id[i]
@@ -95,7 +95,7 @@ lecture_fichier_JSON.summary<-function(object,...,impression=FALSE){
       liste<- c(liste, list(liste_tempo))
       i= i+1
     }
-     print(Filter(Negate(is.null),liste))
+     print(unlist(liste))   
      
 } else {
   question<-list()
