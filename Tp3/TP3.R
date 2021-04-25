@@ -25,20 +25,19 @@ reponses_performances_responsables<-read.csv("data-raw/reponses_performances_res
 #' @examples
 #' lecture_fichier_JSON("data-raw/questionnaire_service_clients.json")
 lecture_fichier_JSON<-function(chemin){
-  fichier <- fromJSON(chemin)
-  liste<-list()
+  fichier <- fromJSON(chemin)     #pas certaine du chemin
   i=1
   liste<- list()
   while (i <= length(row.names(fichier))){
     liste_tempo<-list()
     liste_tempo[["id"]]<-fichier$id[i]
-    liste_tempo[["question"]]<-fichiers$question[i]  
+    liste_tempo[["question"]]<-fichier$question[i]  
     liste_tempo[["choix"]]<-fichier$choix[i]
     liste <- c(liste, list(liste_tempo))
     i= i+1
   }
   return(liste)
-}                           #Ca marche sauf que la derniere question s'affiche 2 fois ?? 
+}                       
 
 #Exemple exctraction id question de la liste
 #question<- c()
@@ -55,8 +54,6 @@ lecture_fichier_JSON<-function(chemin){
   #  if (colnames(jeu_reponses[b]) %in% question){
    #   #Affichage libellé
     #  print(colnames(jeu_reponses[b]))
-      |#
-
 
 #' Méthode print pour la fonction utilitaire lecture_fichier_JSON
 #' 
@@ -92,34 +89,47 @@ lecture_fichier_JSON.summary<-function(object,...,impression=FALSE){
   if (impression){
     liste<-list()
     i=1
-    while (i <= length(row.names(object))){    #on ne veut pas imprimer le choix null de la derniere...
-      liste[["question"]]<-object$question[i]  
-      liste[["choix"]]<-object$choix[i]
+    while (i <= length(row.names(object))){   #on ne veut pas imprimer le choix null de la derniere...
+      object$choix<-object$choix[!unlist(lapply(object$choix,is.null))]
+      liste_tempo<-list()
+      liste_tempo[["id"]]<-object$id[i]
+      liste_tempo[["question"]]<-object$question[i]  
+      liste_tempo[["choix"]]<-object$choix[i] # on veut arreter à i-1 
+      #question<-c(object,as.character(object[[i]]["id"]))
+      liste<- c(liste, list(liste_tempo))
       i= i+1
-      print(liste)}
+      print(liste)
+      }
 } else {
-    print(list(object$question))         
+  question<-list()
+  a = 1
+  while (a <= length(row.names(object))){ 
+    question_tempo<- list()                                # ca print 1-11 puis 1-12 ... 
+    question_tempo[["id"]]<-object$id[a]
+    question_tempo[["question"]]<-object$question[a]
+    question<-c(question,list(question_tempo))
+    a = a+1
+    print(question)}
   }
 }
 
-#fonction principale : generation de rapports R markdown 
-generateur_rapport_R_Markdown<-function(jeu_reponse,liste,variables= NULL,type ="barres verticales",nom,format="HTML",chemin="."){
-  
-}
+#Exemple exctraction id question de la liste
+#     question<- c()
+ #    a <-1
+  #   while (a <= length(liste)){
+    #   question <-  c(question, as.character(liste[[a]]["id"]))
+     #  a = a+1
+    #   print(question)
+    # }
+     #else {print(list(object$question))}
+  #     }
+#}
+ 
+# jeu_reponses <- reponses_performances_responsables[1:15]
 
-if variables =
-
-
-
-
-
-
-
-#étape 2
-#usethis::create_package(
-#  path = "C:/Users/Stephanie/Documents/R pour scientifique/Nomdupackage/", #lancer seulement si rendu la
-#  rstudio = TRUE, 
-#  open = TRUE
-#)
-
-
+# #savoir si question commune
+# b <- 1
+# while (b <= ncol(jeu_reponses)){
+#  if (colnames(jeu_reponses[b]) %in% question){
+#   #Affichage libellé
+#  print(colnames(jeu_reponses[b]))
