@@ -92,10 +92,9 @@ lecture_fichier_JSON.summary<-function(object,...,impression=FALSE){
     while (i <= length(row.names(object))){   #on ne veut pas imprimer le choix null de la derniere...
       object$choix<-object$choix[!unlist(lapply(object$choix,is.null))]
       liste_tempo<-list()
-      liste_tempo[["id"]]<-object$id[i]
+      #liste_tempo[["id"]]<-object$id[i]
       liste_tempo[["question"]]<-object$question[i]  
-      liste_tempo[["choix"]]<-object$choix[i] # on veut arreter à i-1 
-      #question<-c(object,as.character(object[[i]]["id"]))
+      liste_tempo[["choix"]]<-object$choix[i] 
       liste<- c(liste, list(liste_tempo))
       i= i+1
     }
@@ -105,14 +104,13 @@ lecture_fichier_JSON.summary<-function(object,...,impression=FALSE){
   a = 1
   while (a <= length(row.names(object))){ 
     question_tempo<- list()                                
-    question_tempo[["id"]]<-object$id[a]
+    #question_tempo[["id"]]<-object$id[a]
     question_tempo[["question"]]<-object$question[a]
     question<-c(question,list(question_tempo))
     a = a+1
     }
-  print(question)
+  print(question)  # apparait sous forme de liste
 }
-  
 }
 
 #Exemple exctraction id question de la liste
@@ -135,3 +133,12 @@ lecture_fichier_JSON.summary<-function(object,...,impression=FALSE){
 #  if (colnames(jeu_reponses[b]) %in% question){
 #   #Affichage libellé
 #  print(colnames(jeu_reponses[b]))
+
+for (s in questionnaire_service_clients$choix[!unlist(lapply(questionnaire_service_clients$choix,is.null))]){
+  liste_tempo<-list()
+  liste_tempo[["choix"]]<-questionnaire_service_clients$choix[s] # on veut arreter à i-1 
+  print(s)
+  print(liste_tempo)
+}
+
+
