@@ -23,7 +23,10 @@ reponses_performances_responsables<-read.csv("data-raw/reponses_performances_res
 #' @export
 #' @examples
 #' lecture_fichier_JSON("data-raw/questionnaire_service_clients.json")
+library(testthat)
 lecture_fichier_JSON<-function(chemin){
+  if(file.exists(chemin)==FALSE) {
+    warning("Entrer un chemin valide qui terminer par .json ",immediate.=TRUE)}
   fichier <- fromJSON(chemin)     #pas certaine du chemin
   i=1
   liste<- list()
@@ -69,6 +72,7 @@ lecture_fichier_JSON.print<-function(fichier,...){
 #' lecture_fichier_JSON.summary(questionnaire_service_clients,impression=TRUE)
 #' lecture_fichier_JSON.summary(questionnaire_performances_responsables)
 lecture_fichier_JSON.summary<-function(object,...,impression=FALSE){
+  if(is.data.frame(object)==FALSE) {warning("Entrer un fichier valide",immediate.=TRUE)}
   if (impression){
     liste<-list()
     i=1
@@ -82,7 +86,6 @@ lecture_fichier_JSON.summary<-function(object,...,impression=FALSE){
       i= i+1
     }
      print(unlist(liste))   
-     
 } else {
   question<-list()
   a = 1
