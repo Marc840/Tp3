@@ -83,11 +83,11 @@ lecture_fichier_JSON.summary<-function(object,...,impression=FALSE){
 }
 
 #fonction principale : generation de rapports R markdown 
-generateur_rapport_R_Markdown<-function(jeu_reponse,liste,variable= NULL,type ="barres verticales",nom,format="HTML",chemin="."){
+generateur_rapport_R_Markdown<-function(jeu_reponse,liste,variables= NULL,type ="barres verticales",nom,format="HTML",chemin="."){
   
 }
 
-
+if variables =
 
 
 
