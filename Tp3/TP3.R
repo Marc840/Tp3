@@ -20,7 +20,6 @@ reponses_performances_responsables<-read.csv("data-raw/reponses_performances_res
 #' 
 #' @param fichier le chemin ou le questionnaire se trouve 
 #' @return une seule valeur : une liste qui contient un element par question
-#' @author Stephanie kelley
 #' @export
 #' @examples
 #' lecture_fichier_JSON("data-raw/questionnaire_service_clients.json")
@@ -62,7 +61,6 @@ lecture_fichier_JSON<-function(chemin){
 #' @param fichier le fichier qu'on veut imprimer 
 #' @param ... 
 #' @return ??? cest pas un return 
-#' @author Stephanie Kelley
 #' @export
 #' @examples
 #' lecture_fichier_JSON.print(questionnaire_service_clients)
@@ -81,7 +79,6 @@ lecture_fichier_JSON.print<-function(fichier,...){
 #' @param ... arguments additionnels
 #' @param impression True si l'utilisateur veut afficher les choix de reponses aux questions
 #' @return une seule valeur : 
-#' @author Stephanie Kelley
 #' @export
 #' @examples
 #' lecture_fichier_JSON.summary(questionnaire_service_clients,impression=TRUE)
@@ -90,11 +87,12 @@ lecture_fichier_JSON.summary<-function(object,...,impression=FALSE){
     liste<-list()
     i=1
     while (i <= length(row.names(object))){   #on ne veut pas imprimer le choix null de la derniere...
-      object$choix<-object$choix[!unlist(lapply(object$choix,is.null))]
+      nouveau_choix<-object$choix[!unlist(lapply(object$choix,is.null))]
       liste_tempo<-list()
       #liste_tempo[["id"]]<-object$id[i]
       liste_tempo[["question"]]<-object$question[i]  
-      liste_tempo[["choix"]]<-object$choix[i] 
+      liste_tempo[["choix"]]<-nouveau_choix[i] 
+      
       liste<- c(liste, list(liste_tempo))
       i= i+1
     }
@@ -112,6 +110,21 @@ lecture_fichier_JSON.summary<-function(object,...,impression=FALSE){
   print(question)  # apparait sous forme de liste
 }
 }
+
+
+b<-questionnaire_service_clients$choix[!unlist(lapply(questionnaire_service_clients$choix,is.null))]
+b
+questionnaire_service_clients$choix
+liste_tempo<-list()
+liste= list()
+#liste_tempo[["id"]]<-object$id[i]
+liste_tempo[["question"]]<-questionnaire_service_clients$question  
+liste_tempo[["choix"]]<-list(b)
+
+liste<-c(liste,list(liste_tempo))
+
+liste
+
 
 #Exemple exctraction id question de la liste
 #     question<- c()
@@ -133,12 +146,5 @@ lecture_fichier_JSON.summary<-function(object,...,impression=FALSE){
 #  if (colnames(jeu_reponses[b]) %in% question){
 #   #Affichage libellé
 #  print(colnames(jeu_reponses[b]))
-
-for (s in questionnaire_service_clients$choix[!unlist(lapply(questionnaire_service_clients$choix,is.null))]){
-  liste_tempo<-list()
-  liste_tempo[["choix"]]<-questionnaire_service_clients$choix[s] # on veut arreter à i-1 
-  print(s)
-  print(liste_tempo)
-}
 
 
