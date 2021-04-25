@@ -28,15 +28,35 @@ lecture_fichier_JSON<-function(chemin){
   fichier <- fromJSON(chemin)
   liste<-list()
   i=1
-  while (i <= length(row.names(fichier))){    
-    liste[["id"]]<-fichier$id[i]
-    liste[["question"]]<-fichier$question[i]  
-    liste[["choix"]]<-fichier$choix[i]
-    print(liste)
+  liste<- list()
+  while (i <= length(row.names(fichier))){
+    liste_tempo<-list()
+    liste_tempo[["id"]]<-fichier$id[i]
+    liste_tempo[["question"]]<-fichiers$question[i]  
+    liste_tempo[["choix"]]<-fichier$choix[i]
+    liste <- c(liste, list(liste_tempo))
     i= i+1
   }
   return(liste)
 }                           #Ca marche sauf que la derniere question s'affiche 2 fois ?? 
+
+#Exemple exctraction id question de la liste
+#question<- c()
+#a <-1
+#while (a <= length(liste)){
+ # question <-  c(question, as.character(liste[[a]]["id"]))
+ # a = a+1
+ # }
+ # jeu_reponses <- reponses_performances_responsables[1:15]
+  
+ # #savoir si question commune
+ # b <- 1
+ # while (b <= ncol(jeu_reponses)){
+  #  if (colnames(jeu_reponses[b]) %in% question){
+   #   #Affichage libellé
+    #  print(colnames(jeu_reponses[b]))
+      |#
+
 
 #' Méthode print pour la fonction utilitaire lecture_fichier_JSON
 #' 
