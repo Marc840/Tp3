@@ -98,19 +98,21 @@ lecture_fichier_JSON.summary<-function(object,...,impression=FALSE){
       #question<-c(object,as.character(object[[i]]["id"]))
       liste<- c(liste, list(liste_tempo))
       i= i+1
-      print(liste)
-      }
+    }
+     print(liste)
 } else {
   question<-list()
   a = 1
   while (a <= length(row.names(object))){ 
-    question_tempo<- list()                                # ca print 1-11 puis 1-12 ... 
+    question_tempo<- list()                                
     question_tempo[["id"]]<-object$id[a]
     question_tempo[["question"]]<-object$question[a]
     question<-c(question,list(question_tempo))
     a = a+1
-    print(question)}
-  }
+    }
+  print(question)
+}
+  
 }
 
 #Exemple exctraction id question de la liste
