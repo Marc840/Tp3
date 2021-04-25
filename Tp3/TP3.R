@@ -91,12 +91,12 @@ lecture_fichier_JSON.summary<-function(object,...,impression=FALSE){
       liste_tempo<-list()
       #liste_tempo[["id"]]<-object$id[i]
       liste_tempo[["question"]]<-object$question[i]  
-      liste_tempo[["choix"]]<-nouveau_choix[i] 
-      
+      liste_tempo[["choix"]]<-nouveau_choix[i]
       liste<- c(liste, list(liste_tempo))
       i= i+1
     }
-     print(liste)
+     print(Filter(Negate(is.null),liste))
+     
 } else {
   question<-list()
   a = 1
@@ -110,20 +110,6 @@ lecture_fichier_JSON.summary<-function(object,...,impression=FALSE){
   print(question)  # apparait sous forme de liste
 }
 }
-
-
-b<-questionnaire_service_clients$choix[!unlist(lapply(questionnaire_service_clients$choix,is.null))]
-b
-questionnaire_service_clients$choix
-liste_tempo<-list()
-liste= list()
-#liste_tempo[["id"]]<-object$id[i]
-liste_tempo[["question"]]<-questionnaire_service_clients$question  
-liste_tempo[["choix"]]<-list(b)
-
-liste<-c(liste,list(liste_tempo))
-
-liste
 
 
 #Exemple exctraction id question de la liste
