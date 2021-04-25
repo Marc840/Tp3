@@ -38,21 +38,6 @@ lecture_fichier_JSON<-function(chemin){
   return(liste)
 }                       
 
-#Exemple exctraction id question de la liste
-#question<- c()
-#a <-1
-#while (a <= length(liste)){
- # question <-  c(question, as.character(liste[[a]]["id"]))
- # a = a+1
- # }
- # jeu_reponses <- reponses_performances_responsables[1:15]
-  
- # #savoir si question commune
- # b <- 1
- # while (b <= ncol(jeu_reponses)){
-  #  if (colnames(jeu_reponses[b]) %in% question){
-   #   #Affichage libellé
-    #  print(colnames(jeu_reponses[b]))
 
 #' Méthode print pour la fonction utilitaire lecture_fichier_JSON
 #' 
@@ -82,6 +67,7 @@ lecture_fichier_JSON.print<-function(fichier,...){
 #' @export
 #' @examples
 #' lecture_fichier_JSON.summary(questionnaire_service_clients,impression=TRUE)
+#' lecture_fichier_JSON.summary(questionnaire_performances_responsables)
 lecture_fichier_JSON.summary<-function(object,...,impression=FALSE){
   if (impression){
     liste<-list()
@@ -110,27 +96,4 @@ lecture_fichier_JSON.summary<-function(object,...,impression=FALSE){
   print(question)  # apparait sous forme de liste
 }
 }
-
-
-#Exemple exctraction id question de la liste
-#     question<- c()
- #    a <-1
-  #   while (a <= length(liste)){
-    #   question <-  c(question, as.character(liste[[a]]["id"]))
-     #  a = a+1
-    #   print(question)
-    # }
-     #else {print(list(object$question))}
-  #     }
-#}
- 
-# jeu_reponses <- reponses_performances_responsables[1:15]
-
-# #savoir si question commune
-# b <- 1
-# while (b <= ncol(jeu_reponses)){
-#  if (colnames(jeu_reponses[b]) %in% question){
-#   #Affichage libellé
-#  print(colnames(jeu_reponses[b]))
-
 
